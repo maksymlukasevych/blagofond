@@ -2,20 +2,24 @@
 
 angular.module('myApp')
 
-.config(['$routeProvider', function($routeProvider) {
-  $routeProvider.when('/article/:id', {
-    templateUrl: 'article/article.html',
-    controller: 'ArticleCtrl'
-  });
+
+
+
+.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
+    $stateProvider.state( 'article', {
+        url: "/article/:id",
+        templateUrl: "article/article.html",
+        controller: "ArticleController"
+	})
 }])
 
 
 
 
 
-.controller('ArticleCtrl', ['$scope', '$http', '$routeParams', function($scope, $http, $routeParams) {
+.controller('ArticleController', ['$scope', '$http', '$stateParams', function($scope, $http, $stateParams) {
 
-var articleId = $routeParams.id;
+var articleId = $stateParams.id;
 
 $http.post('api/readArticle.php', articleId).success(function(data) {
     $scope.article = data;

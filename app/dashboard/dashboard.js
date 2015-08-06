@@ -1,19 +1,21 @@
 'use strict';
 
-angular.module('myApp.view2', ['ngRoute'])
+angular.module('myApp.view2', [])
 
-.config(['$routeProvider', function($routeProvider) {
-  $routeProvider.when('/view2', {
-    templateUrl: 'view2/view2.html',
-    controller: 'View2Ctrl'
-  });
-}])
+.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
+    $stateProvider.state( 'dashboard', {
+        url: "/dashboard",
+        templateUrl: "dashboard/dashboard.html",
+        controller: "DashboardController"
+    })
+ 
+ }])
 
 
 
 
 
-.controller('View2Ctrl', ['$scope', '$http', function($scope, $http) {
+.controller('DashboardController', ['$scope', '$http', function($scope, $http) {
 
 
 
@@ -36,28 +38,15 @@ if(mm<10) {
 today = dd+'.'+mm+'.'+yyyy;
 $scope.article.date = today;
 
-
-
-
 $scope.cons = function(argument) {
     // alert(typeof($scope.text));
 var article = {};
-
-
-
-
-
 
 $http.post('api/createArticle.php', $scope.article).success(function(data) {
     $scope.article = data;
 });
 
-
-
-
-
 }
-
 
 
 $scope.options = {
