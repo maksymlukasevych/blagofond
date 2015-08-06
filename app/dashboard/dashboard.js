@@ -6,7 +6,10 @@ angular.module('myApp.view2', [])
     $stateProvider.state( 'dashboard', {
         url: "/dashboard",
         templateUrl: "dashboard/dashboard.html",
-        controller: "DashboardController"
+        controller: "DashboardController",
+        data: {
+          noLogin: true
+        }
     })
  
  }])
