@@ -1,3 +1,4 @@
+'use strict';
 angular.module('myApp')
   .service('SessionService', [
     '$injector',
@@ -8,21 +9,32 @@ angular.module('myApp')
         var $scope = $injector.get('$rootScope'),
             $sessionStorage = $injector.get('$sessionStorage');
 
-        if (toState.data !== undefined) {
-          if (toState.data.noLogin !== undefined && toState.data.noLogin) {
+
+
+
+        if (toState.data && toState.data.needLogin) {
             // если нужно, выполняйте здесь какие-то действия 
             // перед входом без авторизации
-          }
+             if ($sessionStorage.user) {
+                $scope.$root.user = $sessionStorage.user;
+              } else {
+                // если пользователь не авторизован - отправляем на страницу авторизации
+                event.preventDefault();
+                $scope.$state.go('home');
+              }
+
+
+          
         } else {
           // вход с авторизацией
-          if ($sessionStorage.user) {
-            $scope.$root.user = $sessionStorage.user;
-          } else {
-            // если пользователь не авторизован - отправляем на страницу авторизации
-            event.preventDefault();
-            $scope.$state.go('home');
-          }
+         
         }
+
+
+
+
+
+
       };
     }
   ]);

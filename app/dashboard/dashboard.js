@@ -7,9 +7,9 @@ angular.module('myApp.view2', [])
         url: "/dashboard",
         templateUrl: "dashboard/dashboard.html",
         controller: "DashboardController",
-        data: {
-          noLogin: true
-        }
+        // data: {
+        //   needLogin: true
+        // }
     })
  
  }])
