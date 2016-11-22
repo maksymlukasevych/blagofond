@@ -6,55 +6,294 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>My AngularJS App</title>
+  <title>Excellence</title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/normalize.css">
   <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/main.css">
   <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
-  <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
-  <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.1/css/bootstrap.min.css" rel="stylesheet"> 
-  <link rel="stylesheet" href="app.css">
-  <link href="bower_components/summernote/dist/summernote.css" rel="stylesheet">
+
+  <!-- <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet"> -->
+<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+  
+  <!-- Fonts -->
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700,300&amp;subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Raleway:700,400,300' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="bower_components/angular-carousel/dist/angular-carousel.min.css">
+  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css"> -->
+  <link rel="stylesheet" href="bower_components/summernote/dist/summernote.css">
+  <link href="bower_components/ng-cropper/dist/ngCropper.all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="bower_components/summernote/dist/summernote.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" media="(max-width: 800px)" href="small.css">
 </head>
-<body>
-  <ul class="menu">
-    <li><a href="#/view1">view1</a></li>
-    <li><a href="#/dashboard">view2</a></li>
-    <li><a href="#/article/3">article</a></li>
-  </ul>
+
+
+<body ng-controller="ApplicationController as appCtrl">
+
+
+    <header toggle-header class="header clearfix navbar">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+
+            <!-- header-left start -->
+            <!-- ================ -->
+            <div class="header-left clearfix">
+
+              <!-- logo -->
+              <div class="logo smooth-scroll">
+                <a href="#banner"><img id="logo" src="images/logo.png" alt="Dreamtame" width="100%"></a>
+              </div>
+
+              <!-- name-and-slogan -->
+              <div class="site-name-and-slogan smooth-scroll">
+                <div class="site-name"><a href="#banner">Розвиток громади</a></div>
+                <div class="site-slogan">Chase your dreams.</div>
+              </div>
+
+            </div>
+            <!-- header-left end -->
+
+          </div>
+          <div class="col-md-8">
+
+            <!-- header-right start -->
+            <!-- ================ -->
+            <div class="header-right clearfix">
+
+              <!-- main-navigation start -->
+              <!-- ================ -->
+              <div class="main-navigation animated">
+
+                <!-- navbar start -->
+                <!-- ================ -->
+                <nav class="navbar navbar-default" role="navigation">
+                  <div class="container-fluid">
+
+                    <!-- Toggle get grouped for better mobile display -->
+                    <div class="navbar-header">
+                      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                      </button>
+                    </div>
+
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse scrollspy smooth-scroll" id="navbar-collapse-1">
+                      <ul class="nav navbar-nav navbar-right">
+                        <li><a ui-sref="home">Головна</a></li>
+                        <li><a ui-sref="about">Про нас</a></li>
+                        <li><a ui-sref="news">Новини</a></li>
+                        <li><a ui-sref="needs">Благодійність</a></li>
+                        <li><a ui-sref="contacts">Контакти</a></li>
+                      </ul>
+                    </div>
+
+                  </div>
+                </nav>
+                <!-- navbar end -->
+
+              </div>
+              <!-- main-navigation end -->
+
+            </div>
+            <!-- header-right end -->
+
+          </div>
+        </div>
+      </div>
+    </header>
+
+
+  <div class="page-heading">
+    <div class="page-headers">
+      <h1 class="text-left">{{quote.text}}</h1>
+      <p class="lead text-left">{{quote.author}}</p>
+    </div>      
+  </div>
+     
+                      
+ 
 
   <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
   <![endif]-->
+<div class="container-fluid" style="max-width: 1200px;margin: 0 auto;">
+  <div class="row">
+    <div class="col-md-9">
+      <div ui-view></div>
+    </div>
+    <div class="col-md-3 sidebar">
+      <div style="background-color: white; height: 100%;">
+        <div class="back-up">
+          <p><span>Рахунок:</span> 2600130922401</p>
+          <p><span>ЄДРПОУ:</span> 39479117</p>
+          <p><span>МФО:</span> 305749</p>
+          <p class="text-center"><span>Зворотній зв'язок</span></p>
+          <form class="input-group">
+            <input type="text" placeholder="Вас звуть" class="form-control">
+            <input type="email" placeholder="Ваш e-mail" class="form-control">
+            <br>
+            <textarea class="form-control" placeholder="Ваше повідомлення"></textarea>
+            <input type="submit" class="btn btn-success" value="Надіслати">
+          </form>
 
-  <div ui-view></div>
+        </div>
+        
 
-  <div>Angular seed app: v<span app-version></span></div>
+
+        <ul>
+          <li ng-repeat="field in fields track by $index">
+            <a href="">
+
+              <img ng-src="{{field.image_url}}" class="img-responsive img-circle">
+             <span>{{field.title}}</span>
+
+
+            </a>
+
+
+            
+          </li>
+        </ul>
+
+       
+
+
+
+
+
+
+      </div>
+    </div>
+  </div>
+</div>
+  
+
+
+
+
+   <!-- Footer -->
+      <div class="footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-footer col-md-3">
+              <h3>Про Нас</h3>
+              <div class="portfolio-item">
+              <div class="about">
+          <p><b>Розвиток Громади</b> є добровільним об'єднанням активних громадян, метою яких є, передусім,  розвиток громадянського суспільства та розвиток України як правової та демократичної держави.</p>
+              </div>
+            </div>
+            </div>
+            <div class="col-footer col-md-3">
+              <h3>Навігація по сайту</h3>
+                <ul class="no-list-style footer-navigate-section">
+                <li><a href="Home.html">Головна</a> - головна сторінка сайту</li>
+                <li><a href="news.html">Новини</a> - сторінка новин спільноти</li>
+                <li><a href="Help.html">Допомога</a> - пожертвування</li>
+                <li><a href="Volonteru.html">Волонтери</a> - запишись уже сьогодні</li>
+                <li><a href="kontaktu.html">Контакти</a> - як з нами звязатися</li>
+                <li><a href="aboutus.html">Про нас</a>  - Наша організація</li>
+              </ul>
+            </div>
+            
+            <div class="col-footer col-md-4">
+              <h3>Контакти</h3>
+              <p class="contact-us-details">
+                  <b>Адреса:</b> Фактична адреса: 79000, м. Львів, пр. Шевченка 7, 4 поверх, оф.25.<br/>
+                  <b>Телефон мобільний:</b> +38 (067) 310-7787.<br/>
+                  <b>Телефон:</b> (032) 235 55 03, (032) 235 55 04.<br/>
+                  <b>Email:</b> <a href="info@rozvytok-hromady.com">info@rozvytok-hromady.com</a>
+                </p>
+            </div>
+            <div class="col-footer col-md-2">
+              <h3>Підписуйся на нас</h3>
+              <ul class="socials">
+                <li class="VK"><a href="http://vk.com/public77307148">Vkontakte</a></li>
+                <li class="FB"><a href="https://www.facebook.com/RozvytokHromady">Facebook</a></li>
+                <li class="TT"><a href="https://twitter.com/rozvytokhromady">Twitter</a></li>
+                            <li class="YB"><a href="https://www.youtube.com/channel/UCFvRkHkD1b5cBlKWzdOYgyw">YouTube</a></li>
+                            <li class="IG"><a href="https://instagram.com/rozvytok_hromady">Instagram</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+                        <div class="footer-copyright">&copy;<a href="dreamtame.com">Powered and Designed by DreamTame</a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
 
   <!-- In production use:
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
-  --> 
+  -->
 
+<!-- 
+  <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+ -->
+  <script src="bower_components/jquery/dist/jquery.min.js"></script>
 
+<script src='bower_components/lodash/lodash.min.js'></script>
+
+<!-- <script src='/path/to/angular-simple-logger/index[.min].js'></script> -->
 
 
   
-  <script src="bower_components/jquery/dist/jquery.min.js"></script>
-  <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.1/js/bootstrap.min.js"></script>
+ 
   <script src="bower_components/summernote/dist/summernote.min.js"></script>
-  <script src="bower_components/summernote/plugin/summernote-ext-video.js"></script>
+  <script src="bower_components/cropper/dist/cropper.min.js"></script>
   <script src="bower_components/angular/angular.js"></script>
-  <script src="bower_components/angular-summernote/dist/angular-summernote.js"></script>
   <script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+  <script src="bower_components/ngInfiniteScroll/build/ng-infinite-scroll.js"></script>
+  <script src="bower_components/jquery-bridget/jquery.bridget.js"></script>
+  <script src="bower_components/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/masonry/3.1.2/masonry.pkgd.min.js"></script>
+  <script src="bower_components/angular-masonry/angular-masonry.js"></script>
+  <script src="bower_components/ng-cropper/dist/ngCropper.all.min.js"></script>
+  <script src='bower_components/angular-google-maps/dist/angular-google-maps.min.js'></script>
+
+  <script src="bower_components/angular-touch/angular-touch.min.js"></script>
+  <script src="bower_components/angular-animate/angular-animate.js"></script>
+  <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+  <script src="bower_components/angular-carousel/dist/angular-carousel.min.js"></script>
+  <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
   <script src="bower_components/ngstorage/ngStorage.min.js"></script>
+  <script src="bower_components/angular-summernote/dist/angular-summernote.min.js"></script>
+  <script src="bower_components/lodash/lodash.min.js"></script>
+  <script src="bower_components/angular-google-maps/dist/angular-google-maps.min.js"></script>
+  
   <script src="app.js"></script>
+  <script src="applicationController.js"></script>
   <script src="services/sessionService.js"></script>
+  
+
+
+
+
+  <script src="directives/headerDirective.js"></script>
+  <script src="directives/headerDirective.js"></script>
+  <script src="directives/setHeightDirective.js"></script>
+
   <script src="home/home.js"></script>
-  <script src="dashboard/dashboard.js"></script>
+  <script src="about/about.js"></script>
   <script src="article/article.js"></script>
-  <script src="components/version/version.js"></script>
-  <script src="components/version/version-directive.js"></script>
-  <script src="components/version/interpolate-filter.js"></script>
+  <script src="news/news.js"></script>
+  <script src="need/need.js"></script>
+  <script src="need/needs.js"></script>
+  <script src="dashboard/dashboard.js"></script>
+  <script src="dashboard/login.js"></script>
+  <script src="contacts/contacts.js"></script>
+
+
+  
+ 
 </body>
 </html>

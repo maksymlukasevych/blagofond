@@ -1,0 +1,18 @@
+<div class="modal-header">
+    <button type="button" class="close" ng-click="$dismiss()"><span aria-hidden="true">&times;</span><span class="sr-only">Закрити</span></button>
+    <h4 class="modal-title">Видалення працівника</h4>
+</div>
+<div class="modal-body">
+    
+        <h3>Видалити працівника:</h3>
+          <form action="api/team/deleteMember.php" method="post" enctype="multipart/form-data">
+                <input type="hidden" name="id" value="{{member.id}}">
+                <p>Видалити працівника {{member.name}}?</p>
+                <input class="submit btn btn-danger" type="submit" name="submit" value="Видалити">
+            </form>
+
+    </div>
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-sm btn-default" ng-click="$dismiss()">Закрити</button>
+</div>

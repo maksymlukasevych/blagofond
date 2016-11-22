@@ -1,0 +1,29 @@
+
+<div class="row">
+  <section class="needs-grid">
+    <div class="col-sm-6 col-md-4 col-xl-3" ng-repeat="need in needs track by $index">
+      <div class="need-box">
+        
+        
+        <div class="need-image">
+          <img ng-src="{{need.image_url}}">
+        </div>
+        <div class="need-header">
+          
+          <a ui-sref="need({id: need.id})">{{need.title}}
+            <p>Потрібно: {{need.amount}}</p>
+          </a>
+          
+        </div>
+        <div class="need-text">
+         <p>{{need.spec}}</p>
+       </div>
+       
+       
+     </div>   
+
+   </div>
+   
+
+ </section>
+</div>

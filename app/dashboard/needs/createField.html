@@ -1,0 +1,17 @@
+<div class="panel-container team-member">
+<div class="team-member" style="width: 250px; margin: 0 auto;">
+<form name="fieldcreate" ng-submit="createField(fieldname)">
+
+
+		<img ng-show="lastSendedimage" ng-src="{{lastSendedimage}}" ng-click="setFieldImage(member)" class="img-responsive img-circle ng-hideimg-responsive img-circle ng-hide">
+		<img ng-hide="lastSendedimage"  ng-src="images/placeholder.png" ng-click="setFieldImage(member)" class="img-responsive img-circle ng-hide">
+		<input type="file" name="mainimage" id="image" onchange="angular.element(this).scope().onFile(this.files[0])"> 
+
+
+
+	<input class="form-control" type="text" ng-model="field.name" placeholder="Назва напряму" required>
+	<input type="submit" id="submit" value="Створити" class="btn btn-success">
+</form>
+</div>
+<h4>{{answer}}</h4>
+</div>

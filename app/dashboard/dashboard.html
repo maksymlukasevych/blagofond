@@ -1,13 +1,18 @@
-<p>This is the partial for view 2.</p>
+<div class="container-fluid">
+	<div class="row row-fluid">
+		<div class="dashboard-nav col-md-3">
 
-<p>{{article}}</p>
+		<div class="sidebar">
+			<ul>
+				<li><a ui-sref="dashboard.articles">Статті</a></li>
+				<li><a ui-sref="dashboard.needs">Потреби</a></li>
+				<li><a ui-sref="dashboard.quotes">Цитати</a></li>
+				<li><a ui-sref="dashboard.members">Команда</a></li>
+			</ul>
+		</div>
 
-
-Заголовок: <input type="text" ng-model="article.title">
-Опис: <textarea ng-model="article.spec"></textarea>
-Дата: <input type="text" ng-model="article.date">
-Текст: <summernote config="options" ng-model="article.text"></summernote>
-<button ng-click="cons()">Commit</button>
-
-
-
+		
+		</div>
+		<div ui-view class="col-md-9" style="background-color: white;"></div>
+	</div>
+</div>

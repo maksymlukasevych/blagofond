@@ -1,8 +1,5 @@
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "newsDB";
+include 'credentials.php';
 // Create connection
 // $conn = new mysqli($servername, $username, $password);
 
@@ -31,7 +28,9 @@ id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 title VARCHAR(142) NOT NULL,
 spec VARCHAR(242) NOT NULL,
 date VARCHAR(20),
-text VARCHAR(10000)
+text TEXT,
+image_url VARCHAR(250) NOT NULL,
+checked BOOLEAN 
 )";
 
 if ($conn->query($sql) === TRUE) {

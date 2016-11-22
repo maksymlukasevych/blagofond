@@ -1,1 +1,89 @@
-<p>This is the partial for view 1.</p>
+<div class="row">
+  <div class="col-md-12">
+    <ul rn-carousel class="slide-image" rn-carousel-auto-slide>
+      <li ng-repeat="article in news" test-height>
+       <img ng-src="{{article.image_url}}">
+       <div class="quote-box">
+        <p class="quote">{{article.title}}</p>
+        <!-- <p class="author">Автор</p> -->
+      </div>
+      
+    </li>
+<!--     <li>
+     <img src="images/slides/slide2.jpg">
+     <div class="quote-box">
+      <p class="quote">"А тут буде наша цитата"</p>
+      <p class="author">Автор</p>
+    </div>
+  </li>
+  <li>
+  	<img src="images/slides/slide3.jpg">
+  	<div class="quote-box">
+      <p class="quote">"One more quote here One more quote here One more quote here"</p>
+      <p class="author">Автор</p>
+    </div>
+  </li> -->
+</ul>
+</div>
+</div>
+
+
+<div class="row">
+  <section class="needs-grid">
+    <div class="col-sm-6 col-md-4 col-xl-3" ng-repeat="need in needs track by $index">
+      <div class="need-box">
+        
+        
+        <div class="need-image">
+          <img ng-src="{{need.image_url}}">
+        </div>
+        <div class="need-header">
+          
+          <a ui-sref="need({id: need.id})">{{need.title}}
+            <p>Потрібно: {{need.amount}}</p>
+          </a>
+          
+        </div>
+        <div class="need-text">
+         <p>{{need.spec}}</p>
+       </div>
+       
+       
+     </div>   
+
+   </div>
+   
+
+ </section>
+</div>
+
+
+	<!-- <div class="row row-fluid">
+		<div class="col-md-12">
+				<section class="news-grid">
+					<div class="article-box" ng-repeat="article in news">
+				        <img ng-src="{{article.image_url}}">
+				      	<div class="article-text">
+                  <span class="format-icon"><i class="fa fa-picture-o"></i></span>
+				      		<a ui-sref="article({id: article.id})">{{article.title}}</a>
+			      			<p>{{article.spec}}</p>
+				      	</div>
+                <div class="article-meta">
+                  <i class="fa fa-clock-o"></i>
+                  <span>{{article.date}}</span>
+                  <a class="fa fa-plus read-more-article" ui-sref="article({id: article.id})"></a>
+                </div>
+				    </div>	    
+				</section>
+    </div>
+	</div>
+</div> -->
+
+
+
+
+
+
+
+
+

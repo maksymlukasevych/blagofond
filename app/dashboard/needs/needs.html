@@ -1,0 +1,16 @@
+<div class="panel-container">
+
+<a ui-sref="dashboard.createfield" class="btn btn-success">Додати напрям</a>
+<a ui-sref="dashboard.createproject" class="btn btn-success">Додати проект</a>
+<a ui-sref="dashboard.createneed" class="btn btn-success">Додати потребу</a>
+
+<ul>
+	<li ng-repeat="need in needs track by $index">
+		<h3>{{need.title}}</h3>
+		<a ui-sref="dashboard.editneed({id: need.id})" class="btn btn-primary">Редагувати</a>
+		<a href="" class="btn btn-danger" ng-click="deleteNeed(need)">Видалити</a>
+		<a href="" ng-hide="need.checked" class="btn btn-success publish-button" ng-click="publishNeed(need)">Опублікувати<a>
+	</li>
+
+</ul>
+</div>

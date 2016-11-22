@@ -1,0 +1,24 @@
+<div class="panel-container">
+	<h3>Створити статтю:</h3>
+
+
+		
+
+
+
+	<form name="createarticle" ng-submit="createArticle()">
+		<div class="team-member" style="width: 250px; margin: 0 auto;">
+			<img ng-show="lastSendedimage" ng-src="{{lastSendedimage}}" ng-click="setArticleImage()" class="img-responsive img-circle ng-hideimg-responsive img-circle ng-hide">
+			<img ng-hide="lastSendedimage"  ng-src="images/placeholder.png" ng-click="setArticleImage()" class="img-responsive img-circle ng-hide">
+			<input type="file" name="mainimage" id="image" onchange="angular.element(this).scope().onFile(this.files[0])">
+		</div>
+	<input class="form-control" type="text" ng-model="article.title" placeholder="Заголовок" required>
+	<textarea class="form-control" ng-model="article.spec" placeholder="Короткий опис" required></textarea>
+	<input class="form-control" type="text" ng-model="article.date" required>
+	<summernote id="summernote" config="options" ng-model="article.text" on-image-upload="imageUpload(files)" on-paste="paste()" required></summernote>
+
+	<input type="submit" id="submit" value="Створити" class="btn btn-success">
+	</form>
+</div>
+
+

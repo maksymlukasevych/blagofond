@@ -28,6 +28,8 @@ $http.post('api/readArticle.php', articleId).success(function(data) {
     var html = $.parseHTML( $scope.article["text"] )
     art.append( html );
 
+    console.log(data)
+
 });
 
 

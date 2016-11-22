@@ -1,0 +1,8 @@
+<!-- <p>{{quotes}}</p> -->
+
+<a ui-sref="dashboard.createquote" class="btn btn-success">Додати цитату</a>
+<div ng-repeat="quote in quotes">
+	<h4>{{quote.text}}</h4>
+	<h5>{{quote.author}}</h5>
+	<a href="" class="btn btn-danger" ng-click="deleteQuote(quote)">Видалити</a>
+</div>

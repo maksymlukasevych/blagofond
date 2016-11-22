@@ -1,0 +1,25 @@
+<div class="panel-container">
+
+<!-- <p>{{need}}</p> -->
+
+<form name="editneed" ng-submit="editNeed()">
+
+	<!-- <select ng-model="fieldid" ng-change="getProjects(fieldid)">
+		<option value="" disabled selected>Оберіть напрям</option>
+		<option ng-repeat="field in fields track by $index" value="{{field.f_id}}">{{field.title}}</option>
+	</select>
+	<br>
+	<select ng-model="need.p_id">
+		<option value="" disabled selected>Оберіть проект</option>
+		<option ng-repeat="project in projects track by $index" value="{{need.p_id}}">{{project.title}}</option>
+	</select> -->
+
+
+	<input type="text" class="form-control" ng-model="need.title" placeholder="Заголовок">
+	<textarea class="form-control" ng-model="need.spec" placeholder="Короткий опис"></textarea>
+	<input class="form-control" type="text" ng-model="need.amount" placeholder="Кількість">
+	<input class="form-control" type="text" ng-model="need.date" placeholder="Дата">
+	<summernote config="options" ng-model="need.text" id="summernote" on-image-upload="imageUpload(files)" on-paste="paste()"></summernote>
+	<input type="submit" id="submit" value="Зберегти" class="btn btn-success">
+</form>
+</div>

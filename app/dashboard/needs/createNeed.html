@@ -1,0 +1,35 @@
+<div class="panel-container">
+	<p>{{lastId}}</p>
+	<h3>Створити потребу:</h3>
+	<form name="needcreate" ng-submit="createNeed(need)">
+		<div class="team-member" style="width: 250px; margin: 0 auto;">
+			<img ng-show="lastSendedimage" ng-src="{{lastSendedimage}}" ng-click="setNeedImage(member)" class="img-responsive img-circle ng-hideimg-responsive img-circle ng-hide">
+			<img ng-hide="lastSendedimage"  ng-src="images/placeholder.png" ng-click="setNeedImage(member)" class="img-responsive img-circle ng-hide">
+			<input type="file" name="mainimage" id="image" onchange="angular.element(this).scope().onFile(this.files[0])">
+			<select ng-model="fieldid" ng-change="getProjects(fieldid)" required>
+				<option value="" disabled selected>Оберіть напрям</option>
+				<option ng-repeat="field in fields track by $index" value="{{field.f_id}}">{{field.title}}</option>
+			</select>
+			<br>
+			<select ng-model="need.p_id" required>
+				<option value="" disabled selected>Оберіть проект</option>
+				<option ng-repeat="project in projects track by $index" value="{{project.p_id}}">{{project.title}}</option>
+			</select>
+		</div>
+
+
+		<input class="form-control" type="text" ng-model="need.title" placeholder="Заголовок" required>
+
+
+		<textarea class="form-control" ng-model="need.spec" placeholder="Короткий опис" required></textarea>
+		
+		<input class="form-control" type="text" ng-model="need.amount" placeholder="Кількість" required>
+
+		<input class="form-control" type="text" ng-model="need.date" required>
+
+		<summernote id="summernote" config="options" ng-model="need.text" on-image-upload="imageUpload(files)" on-paste="paste()" required></summernote>
+
+		<input type="submit" id="submit" value="Створити" class="btn btn-success">
+	
+	</form>
+</div>

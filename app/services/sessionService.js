@@ -1,9 +1,6 @@
 'use strict';
 angular.module('myApp')
-  .service('SessionService', [
-    '$injector',
-    function($injector) {
-      "use strict";
+  .service('SessionService', ['$injector', function($injector) {
 
       this.checkAccess = function(event, toState, toParams, fromState, fromParams) {
         var $scope = $injector.get('$rootScope'),
@@ -20,11 +17,9 @@ angular.module('myApp')
               } else {
                 // если пользователь не авторизован - отправляем на страницу авторизации
                 event.preventDefault();
-                $scope.$state.go('home');
+                $scope.$state.go('login');
               }
-
-
-          
+              
         } else {
           // вход с авторизацией
          

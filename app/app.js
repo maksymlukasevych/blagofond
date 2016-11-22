@@ -3,11 +3,15 @@
 // Declare app level module which depends on views, and components
 angular.module('myApp', [
   'ui.router',
+  'ui.bootstrap',
   'ngStorage',
   'summernote',
-  'myApp.view1',
-  'myApp.view2',
-  'myApp.version'
+  'ngTouch',
+  'angular-carousel',
+  'wu.masonry',
+  'infinite-scroll',
+  'ngCropper',
+  'uiGmapgoogle-maps'
 ])
 
 .config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {

@@ -1,0 +1,23 @@
+<!-- <p>{{need}}</p> -->
+<div class="article-container">
+<div class="container-fluid">
+	<div class="row">
+		<div class="article-header">
+			<div class="article-main-image col-md-3">
+				<img ng-show="need.image_url" ng-src="{{need.image_url}}" ng-click="setMainNeedImage(need)">
+				<img ng-hide="need.image_url"  ng-src="images/placeholder.png" ng-click="setMainNeedImage(need)">
+			</div>
+			<input type="file" name="mainimage" id="mainimage">
+			<div class="article-title col-md-9">
+				<h2>{{need.title}}</h2>
+				<h4 class="article-date">Опубліковано: {{need.amount}}</h4>
+				<h4 class="article-date">Опубліковано: {{need.date}}</h4>
+			</div>
+		</div>
+	</div>
+
+</div>
+<div class="article-text"></div>
+<a href="" class="btn btn-success" ng-click="publishNeed(need)">Опублікувати</a>
+<a ui-sref="dashboard.editneed({id: need.id})" class="btn btn-primary">Редагувати</a>
+</div>

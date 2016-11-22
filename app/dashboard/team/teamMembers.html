@@ -1,0 +1,14 @@
+   <a ui-sref="dashboard.createteam" class="btn btn-success">Додати члена</a>
+    <section>
+        <div class="container-fluid">
+            <div class="row row-centered">
+                <div class="col-md-4 team-member text-center" ng-repeat="member in team track by $index">
+                        <img ng-show="member.image_url" ng-src="{{member.image_url}}" class="img-responsive img-circle">
+                        <img ng-hide="member.image_url"  ng-src="images/placeholder.png" class="img-responsive img-circle">
+                        <h4>{{member.name}}</h4>
+                        <p class="text-muted text-center">{{member.status}}</p><a href="" class="btn btn-danger" ng-click="deleteMember(member)">Видалити</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- <p>{{team}}</p> -->

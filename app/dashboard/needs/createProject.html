@@ -1,0 +1,12 @@
+<div class="panel-container">
+
+<form name="projectcreate" ng-submit="createProject(projectname, fieldid)">
+	<select ng-model="fieldid" required>
+		<option value="" disabled selected>Оберіть напрям</option>
+		<option ng-repeat="field in fields track by $index" value="{{field.f_id}}">{{field.title}}</option>
+	</select>
+	<input class="form-control" type="text" ng-model="projectname" placeholder="Назва проекту" required>
+	<input type="submit" id="submit" value="Створити" class="btn btn-success">
+</form>
+<h4>{{answer}}</h4>
+</div>

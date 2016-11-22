@@ -1,0 +1,31 @@
+
+
+
+<section class="news-grid">
+	
+		<div class="row row-fluid" masonry infinite-scroll="loadMore()">
+			<div class="col-sm-6 col-md-4 masonry-brick" ng-repeat="article in news track by $index">
+				<div class="article-box" >
+					<img ng-src="{{article.image_url}}">
+					<div class="article-text">
+						<span class="format-icon"><i class="fa fa-picture-o"></i></span>
+						<a ui-sref="article({id: article.id})">{{article.title + " " + article.id}}</a>
+						<p>{{article.spec}}</p>
+					</div>
+					<div class="article-meta">
+						<i class="fa fa-clock-o"></i>
+						<span>{{article.date}}</span>
+						<a class="fa fa-plus read-more-article" href=""></a>
+					</div>
+				</div>	
+			</div>
+		</div>
+
+ 
+</section>
+
+
+
+
+
+

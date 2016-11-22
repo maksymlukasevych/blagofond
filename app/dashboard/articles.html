@@ -1,0 +1,13 @@
+<div class="panel-container">
+	<a ui-sref="dashboard.addarticle" class="btn btn-success">Додати статтю</a>
+
+	<ul>
+		<li ng-repeat="article in articles track by $index">
+			<h3>{{article.title}}</h3>
+			<a ui-sref="dashboard.editarticle({id: article.id})" class="btn btn-primary">Редагувати</a>
+			<a href="" class="btn btn-danger" ng-click="deleteArticle(article)">Видалити</a>
+			<a href="" ng-hide="article.checked" class="btn btn-success publish-button" ng-click="publishArticle(article)">Опублікувати<a>
+		</li>
+
+	</ul>
+</div>
